@@ -11,7 +11,7 @@ const processTransaction = (transaction) => {
     raw_message: transaction,
   };
 
-  const validTags = ["1", "2", "3"]; // Define valid tags
+  const validTags = ["1", "2", "3"];
   let i = 0;
 
   while (i < transaction.length) {
@@ -29,7 +29,7 @@ const processTransaction = (transaction) => {
     }
 
     switch (tag) {
-      case "1": // Payment network
+      case "1":
         result.network = value;
         if (value === "VISA") {
           result.transaction_descriptor = result.amount.padStart(8, "0");
@@ -38,17 +38,17 @@ const processTransaction = (transaction) => {
         }
         break;
 
-      case "2": // Transaction amount
-        result.amount = value.replace(".", ""); // Remove the decimal point
-        result.amount = parseInt(result.amount, 10).toString(); // Remove leading zeros
+      case "2":
+        result.amount = value.replace(".", "");
+        result.amount = parseInt(result.amount, 10).toString();
 
         if (result.transaction_descriptor === '00000000' ) {
           result.transaction_descriptor = result.amount.padStart(8, "0");
         }
         break;
 
-      case "3": // Merchant
-        result.merchant = value.slice(0, 10); // Truncate to 10 characters
+      case "3":
+        result.merchant = value.slice(0, 10);
         break;
 
       default:
@@ -56,7 +56,7 @@ const processTransaction = (transaction) => {
         break;
     }
 
-    i += 3 + length; // Move to the next tag
+    i += 3 + length;
   }
 
   return result;
