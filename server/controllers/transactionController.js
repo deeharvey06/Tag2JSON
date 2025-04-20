@@ -1,4 +1,4 @@
-const processTransaction = require('../helpers/processTransaction'); // Adjust the path as necessary
+const processTransaction = require('../helpers/processTransaction');
 
 exports.processTransaction = (req, res, next) => {
   try {
@@ -13,6 +13,6 @@ exports.processTransaction = (req, res, next) => {
     res.status(200).json(result);
   } catch (error) {
     console.error('Error processing transaction:', error.message);
-    res.status(400).json({ error: error.message }); // Send error message to the frontend
+    res.status(400).json({ error: error.message });
   }
 };
