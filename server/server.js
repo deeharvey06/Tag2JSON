@@ -14,9 +14,6 @@ app.use(bodyParser.json());
 
 app.use('/api/v1/transaction', transactionRouter);
 
-app.get('/api/hello', (_req, res) => {
-  res.status(200).json({ message: 'Hello from server!' });
-});
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
