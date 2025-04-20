@@ -1,0 +1,28 @@
+.decodedTransactionDisplay {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  .sectionTitle {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .displayContent {
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-height: 100px; /* Ensure a minimum height */
+    overflow-y: auto; /* Add a scrollbar if content overflows */
+    font-family: monospace; /* Use a monospace font for JSON data */
+    font-size: 0.9rem; /* Adjust font size for readability */
+    color: #333;
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+    word-wrap: break-word; /* Break long words if necessary */
+    text-align: left; /* Align text to the left for JSON formatting */
+  }
+}
