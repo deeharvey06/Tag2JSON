@@ -5,6 +5,6 @@ const API_BASE_URL =
 
 export const processTransaction = (structuredString) => {
   return axios.post(`${API_BASE_URL}/transaction/processTransaction`, {
-    structuredString
+    transaction: structuredString,
   });
 };
